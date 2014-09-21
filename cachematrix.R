@@ -9,7 +9,7 @@
 ## Name of function: makeCacheMatrix
 ## Description: This function creates a special "matrix" object that can cache its inverse
 ## Input: x matrix
-## Output: 
+## Output: singleton version -- only process inverse once 
 makeCacheMatrix <- function(x = matrix()) {
 
 	inv <- NULL
@@ -27,8 +27,10 @@ makeCacheMatrix <- function(x = matrix()) {
 	getinv = getinv)
 }
 
-
-## Write a short comment describing this function
+## Name of function: cacheSolve
+## Description: This function implements the singleton version of inverse
+## Input: x CacheMatrix
+## Output: inverse of x 
 cacheSolve <- function(x, ...) {
 
 	inv <- x$getinv()
